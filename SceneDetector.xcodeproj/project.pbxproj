@@ -18,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		A2C74F691F1DBAC700AE5585 /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = GoogLeNetPlaces.mlmodel; path = ../../../../Desktop/GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
+		A2C74F6B1F1EFD2D00AE5585 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CD8A659D1EE7EC0700942922 /* SceneDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SceneDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8A65A01EE7EC0700942922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD8A65A21EE7EC0700942922 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +43,7 @@
 		CD8A65941EE7EC0700942922 = {
 			isa = PBXGroup;
 			children = (
+				A2C74F6B1F1EFD2D00AE5585 /* README.md */,
 				CD8A659F1EE7EC0700942922 /* SceneDetector */,
 				CD8A659E1EE7EC0700942922 /* Products */,
 			);
