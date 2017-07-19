@@ -92,5 +92,29 @@ extension ViewController {
     guard let model = try? VNCoreMLModel(for: GoogLeNetPlaces().model) else {
       fatalError("can't load Places ML model")
     }
+    
+    // Create a Vision request with completion handler
+    let request = VNCoreMLRequest(model: model) { [weak self] request, error in
+      guard let results = request.results as? [VNClassificationObservation],
+        let topResult = results.first else {
+          fatalError("unexpected result type from VNCoreMLRequest")
+      }
+      
+      // Update UI on main queue
+      let article = (self?.vowels.contains(topResult.identifier.first!))! ? "an" : "a"
+      DispatchQueue.main.async { [weak self] in
+        self?.answerLabel.text = "\(Int(topResult.confidence * 100))% it's \(article) \(topResult.identifier)"
+      }
+    }
+    
+    // Run the Core ML GoogLeNetPlaces classifier on global dispatch queue
+    let handler = VNImageRequestHandler(ciImage: image)
+    DispatchQueue.global(qos: .userInteractive).async {
+      do {
+        try handler.perform([request])
+      } catch {
+        print(error)
+      }
+    }
   }
 }
